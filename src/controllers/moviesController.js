@@ -46,7 +46,7 @@ const moviesController = {
       awards,
       length,
       rating,
-      genre_id: genre,
+      genre,
     }).then((movie) => {
       console.log(movie);
       return res.redirect("/movies");
@@ -93,10 +93,9 @@ const moviesController = {
           id : req.params.id
         }
       }
-    ).then(movie =>{
-      res.redirect('moviesList', {movie})
-    }).catch(error=>console.log(error))
-  },
+    )
+    res.redirect('/movies')
+    }
 };
 
 module.exports = moviesController;
