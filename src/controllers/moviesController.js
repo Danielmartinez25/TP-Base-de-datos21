@@ -93,8 +93,9 @@ const moviesController = {
           id : req.params.id
         }
       }
-    )
-    res.redirect('/movies')
+    ).then(()=>{
+      res.redirect('/movies')
+    }).catch(error=>console.log(error))
     }
 };
 
